@@ -16,5 +16,12 @@
   "bugs": {
     "url": "https://github.com/lucasfcosta/monte-carlo-forecasts-talk/issues"
   },
-  "homepage": "https://github.com/lucasfcosta/monte-carlo-forecasts-talk#readme"
+  "homepage": "https://github.com/lucasfcosta/monte-carlo-forecasts-talk#readme",
+  "dependencies": {
+    "chart.js": "^3.8.0",
+    "chartjs-node-canvas": "^4.1.6"
+  },
+  "devDependencies": {
+    "prettier": "^2.7.1"
+  }
 }

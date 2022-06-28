@@ -39,6 +39,10 @@ const run = () => {
     outcomes[outcomeKey] = (outcomes[outcomeKey] || 0) + 1;
   }
 
+  printPercentile(outcomes, 50);
+  printPercentile(outcomes, 75);
+  printPercentile(outcomes, 90);
+  printPercentile(outcomes, 95);
   plotHistogram(outcomes);
 };
 
@@ -83,6 +87,31 @@ const plotHistogram = async (outcomes) => {
     encoding: "binary",
   });
   console.log("Finished!");
+};
+
+const printPercentile = (outcomes, percentile) => {
+  const pQtd = TOTAL_RUNS - Math.ceil(TOTAL_RUNS / (100 / percentile));
+
+  const sortedDates = Object.keys(outcomes).sort((a, b) => {
+    if (a > b) return 1;
+    if (a < b) return -1;
+    return 0;
+  });
+
+  let sum = 0;
+  let percentileDate = "";
+
+  for (let d of sortedDates) {
+    sum += outcomes[d];
+    if (sum >= pQtd) {
+      percentileDate = d;
+      break;
+    }
+  }
+
+  console.log(
+    `Percentile ${percentile}: ${percentileDate} (${sum}/${TOTAL_RUNS})`
+  );
 };
 
 run();

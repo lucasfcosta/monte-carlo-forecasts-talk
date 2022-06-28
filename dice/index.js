@@ -19,7 +19,7 @@ const run = () => {
 
   console.log(`Total Rolls: ${TOTAL_ROLLS}`);
   console.log(`Total Sevens: ${sevens}`);
-  console.log(`Probability of rolling a seven: ${p.toFixed(2)}`);
+  console.log(`Probability of rolling a seven: ${p.toFixed(2)}%`);
 };
 
 run();

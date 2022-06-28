@@ -19,7 +19,9 @@
   "homepage": "https://github.com/lucasfcosta/monte-carlo-forecasts-talk#readme",
   "dependencies": {
     "chart.js": "^3.8.0",
-    "chartjs-node-canvas": "^4.1.6"
+    "chartjs-node-canvas": "^4.1.6",
+    "luxon": "^2.4.0",
+    "progress": "^2.0.3"
   },
   "devDependencies": {
     "prettier": "^2.7.1"
